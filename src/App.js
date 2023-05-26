@@ -1,11 +1,20 @@
 import axios from 'axios'
-import { useState, useEffect } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import Header from './components/Header'
 import UserProfile from './components/UserProfile'
 
 function App() {
   const [isLoading, setIsLoading] = useState(false)
   const [userInfo, setUserInfo] = useState({})
+  const [searchBox, setSearchBox] = useState('')
+
+  // const handleGetUserInfo = useCallback(async (username) => {
+  //   setIsLoading(true)
+  //   const findUser = username ? `${username}` : ''
+  //   const data = await axios(`https://api.github.com/users/${findUser}`)
+  //   setUserInfo(data.data)
+  //   setIsLoading(false)
+  // }, [])
 
   useEffect(() => {
     getUser()
@@ -25,9 +34,14 @@ function App() {
   }
 
   console.log(userInfo)
+  console.log(searchBox)
   return (
     <div className="bg-dm h-screen flex flex-col gap-3">
-      <Header />
+      <Header
+        searchBox={searchBox}
+        setSearchBox={setSearchBox}
+        // handleGetUserInfo={handleGetUserInfo}
+      />
       <UserProfile
         profile_pic={userInfo?.avatar_url}
         name={userInfo?.name}
