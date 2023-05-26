@@ -2,6 +2,10 @@
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
+    screens: {
+      mobile: '375px',
+      desktop: '1440px'
+    },
     fontFamily: {
       robotoMono: ['Roboto Mono']
     },
