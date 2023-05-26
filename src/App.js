@@ -28,7 +28,20 @@ function App() {
   return (
     <div className="bg-dm h-screen flex flex-col gap-3">
       <Header />
-      <UserProfile />
+      <UserProfile
+        profile_pic={userInfo?.avatar_url}
+        name={userInfo?.name}
+        user_id={userInfo?.login}
+        joined={userInfo?.created_at}
+        bio={userInfo?.bio}
+        repos={userInfo?.public_repos}
+        followers={userInfo?.followers}
+        following={userInfo?.following}
+        location={userInfo?.location}
+        twitter={userInfo?.twitter_username}
+        company={userInfo?.company}
+        blog={userInfo?.blog}
+      />
     </div>
   )
 }
