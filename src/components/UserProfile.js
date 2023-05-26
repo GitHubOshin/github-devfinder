@@ -1,27 +1,41 @@
-function UserProfile() {
+import Activity from './Activity'
+
+function UserProfile(props) {
+  const {
+    profile_pic,
+    name,
+    user_id,
+    joined,
+    bio,
+    repos,
+    followers,
+    following,
+    location,
+    blog,
+    twitter,
+    company
+  } = props
   return (
-    <section className="bg-dmBgContent">
-      <img alt="Profile" />
+    <section className="bg-dmBgContent text-white">
+      <img alt="Profile" src={profile_pic} />
       <div>
-        <div>
-          <b>The Octocat</b>
-          <h6>@octocat</h6>
-          <p>Joined 25 Jan 2011</p>
+        <div className="text-white">
+          <b>{name}</b>
+          <h6>@{user_id}</h6>
+          <p>Joined {joined}</p>
         </div>
-        <p>bio</p>
-        <table className="bg-dm w-full">
-          <tr>
-            <th>Repos</th>
-            <th>Followers</th>
-            <th>Following</th>
-          </tr>
-          <tr>
-            <td>8</td>
-            <td>3938</td>
-            <td>9</td>
-          </tr>
-        </table>
-        <div>contacts</div>
+        <p>{bio === null ? 'This profile has no bio' : bio}</p>
+        <div className="bg-dm w-full text-white flex">
+          <Activity activity="Repos" count={repos} />
+          <Activity activity="Followers" count={followers} />
+          <Activity activity="Following" count={following} />
+        </div>
+        <div className="text-white">
+          <span>{location}</span>
+          <span>{twitter === null ? 'Not avilable' : twitter}</span>
+          <span>{blog}</span>
+          <span>{company}</span>
+        </div>
       </div>
     </section>
   )
