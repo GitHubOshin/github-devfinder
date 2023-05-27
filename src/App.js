@@ -36,26 +36,28 @@ function App() {
   console.log(userInfo)
   console.log(searchBox)
   return (
-    <div className="bg-dm h-screen flex flex-col gap-3">
-      <Header
-        searchBox={searchBox}
-        setSearchBox={setSearchBox}
-        // handleGetUserInfo={handleGetUserInfo}
-      />
-      <UserProfile
-        profile_pic={userInfo?.avatar_url}
-        name={userInfo?.name}
-        user_id={userInfo?.login}
-        joined={userInfo?.created_at}
-        bio={userInfo?.bio}
-        repos={userInfo?.public_repos}
-        followers={userInfo?.followers}
-        following={userInfo?.following}
-        location={userInfo?.location}
-        twitter={userInfo?.twitter_username}
-        company={userInfo?.company}
-        blog={userInfo?.blog}
-      />
+    <div className="bg-dm h-screen min-w-[350px] flex justify-center items-center font-robotoMono">
+      <div className="flex w-full flex-col gap-6 max-w-[730px] min-w-[327px]">
+        <Header
+          searchBox={searchBox}
+          setSearchBox={setSearchBox}
+          // handleGetUserInfo={handleGetUserInfo}
+        />
+        <UserProfile
+          profile_pic={userInfo?.avatar_url}
+          name={userInfo?.name}
+          user_id={userInfo?.login}
+          joined={userInfo?.created_at}
+          bio={userInfo?.bio}
+          repos={userInfo?.public_repos}
+          followers={userInfo?.followers}
+          following={userInfo?.following}
+          location={userInfo?.location}
+          twitter={userInfo?.twitter_username}
+          company={userInfo?.company}
+          blog={userInfo?.blog}
+        />
+      </div>
     </div>
   )
 }
