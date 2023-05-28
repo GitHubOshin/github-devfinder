@@ -8,14 +8,6 @@ function App() {
   const [userInfo, setUserInfo] = useState({})
   const [searchBox, setSearchBox] = useState('')
 
-  // const handleGetUserInfo = useCallback(async (username) => {
-  //   setIsLoading(true)
-  //   const findUser = username ? `${username}` : ''
-  //   const data = await axios(`https://api.github.com/users/${findUser}`)
-  //   setUserInfo(data.data)
-  //   setIsLoading(false)
-  // }, [])
-
   useEffect(() => {
     getUser()
   }, [])
@@ -41,7 +33,6 @@ function App() {
         <Header
           searchBox={searchBox}
           setSearchBox={setSearchBox}
-          // handleGetUserInfo={handleGetUserInfo}
         />
         <UserProfile
           profile_pic={userInfo?.avatar_url}
