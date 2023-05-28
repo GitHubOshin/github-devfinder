@@ -1,4 +1,5 @@
 import Activity from './Activity'
+import Contact from './Contact'
 
 function UserProfile(props) {
   const {
@@ -39,10 +40,10 @@ function UserProfile(props) {
           <Activity activity="Following" count={following} />
         </div>
         <div className="text-white grid grid-cols-2 gap-5">
-          <span>{location}</span>
-          <span>{twitter === null ? 'Not avilable' : twitter}</span>
-          <span>{blog}</span>
-          <span>{company}</span>
+          <Contact contact={location} />
+          <Contact contact={twitter} />
+          <Contact contact={blog} />
+          <Contact contact={company} />
         </div>
       </div>
     </section>
