@@ -1,19 +1,7 @@
-import { useEffect, useCallback } from 'react'
+import { useEffect } from 'react'
 
 function Header(props) {
-  const { searchBox, setSearchBox, handleGetUserInfo } = props
-
-  // useEffect(() => {
-  //   handleGetUserInfo()
-  // }, [handleGetUserInfo])
-
-  // const handleSubmitUsername = useCallback(
-  //   async (e) => {
-  //     e.preventDefault()
-  //     await handleGetUserInfo(searchBox)
-  //   },
-  //   [handleGetUserInfo, searchBox]
-  // )
+  const { searchBox, setSearchBox } = props
 
   return (
     <header className="w-full flex flex-col gap-8">
@@ -23,7 +11,7 @@ function Header(props) {
       </div>
       <form
         className="bg-dmBgContent flex justify-between items-center max-h-[70px] min-h-[60px] pr-[10px] rounded-xl"
-        // onSubmit={handleSubmitUsername}
+        // onSubmit={}
       >
         <input
           className="w-full max-w-[600px] mx-[42px] bg-dmBgContent text-white"
